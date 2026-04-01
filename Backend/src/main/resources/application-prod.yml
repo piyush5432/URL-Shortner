@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/urlshortener}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  profiles:
+    active: prod
+
+server:
+  port: ${PORT:8080}
+
+app:
+  base-url: ${APP_BASE_URL:https://your-backend.onrender.com}
+  allowed-origins: ${ALLOWED_ORIGINS:https://your-github-username.github.io}
+
+logging:
+  level:
+    com.urlshortener: INFO
