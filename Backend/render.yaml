@@ -18,3 +18,9 @@ services:
         value: https://url-shortener-api.onrender.com
       - key: ALLOWED_ORIGINS
         value: https://piyush5432.github.io
+
+databases:
+  - name: urlshortener-db
+    plan: free
+    databaseName: urlshortener
+    ipAllowList: []
