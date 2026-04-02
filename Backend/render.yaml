@@ -1,12 +1,11 @@
 services:
   - type: web
     name: url-shortener-api
-    runtime: docker
     plan: free
-    dockerfilePath: ./Dockerfile
+    region: oregon
+    buildCommand: ./mvnw clean install -DskipTests
+    startCommand: java -jar target/url-shortener-1.0.0.jar
     healthCheckPath: /api/health
-    ports:
-      - 8080
     envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
