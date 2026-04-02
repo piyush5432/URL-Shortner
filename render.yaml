@@ -6,8 +6,6 @@ services:
     dockerfilePath: ./Backend/Dockerfile
     rootDir: ./Backend
     healthCheckPath: /api/health
-    ports:
-      - 8080
     envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
